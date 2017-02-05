@@ -1,10 +1,12 @@
 #gameContainer{
-	background-color: #333;
-	width: 90vw;
-	height: 90vh;
+	width: 100vw;
+	height: 100vh;
 	margin: 0 auto;
 	font-family: sans-serif;
+	background-image: url("../images/concrete_seamless.png");
+	overflow: hidden;
 }
+
 
 
 
@@ -12,28 +14,51 @@
 #UI_top{
 	display: flex;
 	height: 10vh;
-	background-color: green;
+	font-family: 'Archivo Black', sans-serif;
+	letter-spacing: 4px;
 }
 #health_UI_H, #score_UI_H{
 	display: flex;
 	width: calc(50% - 20px);
 	margin: auto;
-	height: 80%;
-	border:1px solid #eee000;
+	height: 60%;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+	border:1px solid #000;
+	border-radius: 5px;
 }
-#health_UI_H img, #score_UI_H img ,
 #health_UI_H p, #score_UI_H p {
-	background-color: white;
-	width: calc(50% - 20px);
+	width: calc(75% - 20px);
 	margin: auto;
+	font-size: 5vmin;
+    color: #fff;
+    text-shadow: -2px 2px 2px #000, 2px 2px 2px #000,
+    -2px -2px 2px #000, 2px -2px 2px #000;
 }
+
+#health_UI_H div, #score_UI_H div{
+	margin: auto;
+	width: calc(25% - 20px);
+	height: 80%;
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: center right;
+}
+#health_UI_H div{
+	background-image: url("../images/iconHeart.png");
+}
+
+#score_UI_H div{
+	background-image: url("../images/iconStar.png");
+}
+
+
 
 
 
 
 #Scroll_H{
 	height: 27vh;
-	background-color: blue;
 	text-align: center;
 	width: 100%;
 	display: flex;
@@ -44,17 +69,143 @@
 	width: 100%;
 	margin: auto;
 	height: calc(25% - 2px);
-	border:1px solid #eee000;
 	font-size: 4vw;
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: center;
+    display: flex;
+	flex-direction: row;
+	z-index: 10;
+}
+#Scroll_top div p{
+	margin-top: 5vmin;
+	font-size:  4vmin;
+	color: #746b56;
+    text-shadow: -2px 2px 2px #c5beae, 2px 2px 2px #c5beae,
+    -2px -2px 2px #c5beae, 2px -2px 2px #c5beae;
 }
 
-#Scroll_content{
-	width: 100%;
-	margin: auto;
-	height: calc(50% - 2px);
-	border:1px solid green;
-	font-size: 6vw;
+#Scroll_top div:nth-child(1){
+	width: 10%;
+	height: 100%;
+	margin:auto 0;
+	margin-left: 5%;
+	background-image: url("../images/scroll_b_TL.png");
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: right bottom;
 }
+#Scroll_top div:nth-child(2){
+	margin:auto 0;
+	width: 70%;
+	height: 100%;
+	background-image: url("../images/scroll_b_TC.png");
+	background-size: contain;
+    background-repeat:   repeat-x;
+    background-position: center bottom;
+}
+#Scroll_top div:nth-child(3){
+	width: 10%;
+	height: 100%;
+	margin:auto 0;
+	margin-right: 5%;
+	background-image: url("../images/scroll_b_TR.png");
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: left bottom;
+}
+
+
+
+#Scroll_bottom div:nth-child(1){
+	width: 10%;
+	height: 100%;
+	margin:auto 0;
+	margin-left: 5%;
+	background-image: url("../images/scroll_b_BL.png");
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: right top;
+}
+#Scroll_bottom div:nth-child(2){
+	margin:auto 0;
+	width: 70%;
+	height: 100%;
+	background-image: url("../images/scroll_b_BC.png");
+	background-size: contain;
+    background-repeat:   repeat-x;
+    background-position: center top;
+}
+#Scroll_bottom div:nth-child(3){
+	width: 10%;
+	height: 100%;
+	margin:auto 0;
+	margin-right: 5%;
+	background-image: url("../images/scroll_b_BR.png");
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: left top;
+}
+
+#Scroll_bottom div p{
+	margin-top: -1vmin;
+	font-size:  3vmin;
+	color: #746b56;
+    text-shadow: -2px 2px 2px #c5beae, 2px 2px 2px #c5beae,
+    -2px -2px 2px #c5beae, 2px -2px 2px #c5beae;
+}
+
+
+#Scroll_content{
+	height: 100%;
+    display: flex;
+	flex-direction: row;
+	z-index: 9;
+}
+
+
+#Scroll_content div:nth-child(1){
+	width: 9%;
+	height: 100%;
+	margin:auto 0;
+	margin-left: 5%;
+}
+#Scroll_content div:nth-child(2){
+	margin:auto 0;
+	margin-top: -1px;
+	width: 72%;
+	height: 102%;
+	background-image: url("../images/scroll_inner.png");
+	background-size: 100% 100%;
+    background-repeat:   repeat-x;
+    display: table;
+}
+#Scroll_content div:nth-child(3){
+	width: 9%;
+	height: 100%;
+	margin:auto 0;
+	margin-right: 5%;
+}
+
+#Scroll_content div p{
+	margin:auto 0;
+	display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 6vmin;
+    color: #746b56;
+    text-shadow: -2px 2px 2px #c5beae, 2px 2px 2px #c5beae,
+    -2px -2px 2px #c5beae, 2px -2px 2px #c5beae;
+}
+
+@media screen and (max-width : 640px) {
+	#Scroll_top div:nth-child(n-1),
+	#Scroll_bottom div:nth-child(n-1){
+		background-size: 100% 100%;
+	}
+}
+
+
 
 
 
@@ -62,22 +213,74 @@
 #mainContent_H{
 	display: flex;
 	height: 27vh;
-	background-color: green;
 	text-align: center;
 }
 
 #hero_H, #enemy_H{
-	display: flex;
+	display: table;
 	width: calc(50% - 20px);
 	margin: auto;
 	height: calc(100% - 20px);
-	border:1px solid #eee000;
 }
 
-#hero, #enemy {
-	background-color: white;
-	margin: auto;
+#hero{
+	width: 100%;
+	background-image: url("../images/wiz.gif");
+	background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: center;
+	display: table-cell;
+	-webkit-filter: drop-shadow(0px 20px 15px rgba(0,0,0,0.5));
 }
+
+#enemy_H{
+	display: flex;
+  	flex-direction: column;
+  	transition: all 2s ease-out;
+  	/*animated to zero!!*/
+  	margin-right: 0;
+  	opacity: 1;
+}
+
+.hideEnemy{
+	opacity: 0;
+	margin-right: -75% !important;
+}
+
+#enemy{
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/ghosts/2.png");
+	background-size:  contain;
+    background-repeat:   no-repeat;
+    background-position: center; /*right center; to animate!...maybe@@*/
+	display: table-cell;
+	-webkit-filter: drop-shadow(0px 20px 15px rgba(0,0,0,0.5));
+}
+
+
+
+#enemyHearts{
+	width: 50%;
+	margin: auto;
+	height: 5vh;
+	display: flex;
+	flex-direction: row;
+	padding:2px;
+	border: 2px solid rgba(50,50,50, 0.2);
+	border-radius: 10px;
+	background-color: rgba(50,50,50, 0.2);
+}
+#enemyHearts div{
+	height: 90%;
+	width: 100%;
+	margin: auto;
+	background-size: contain;
+    background-repeat:   no-repeat;
+    background-position: center center;
+	background-image: url("../images/iconHeart.png");
+}
+
 
 
 
@@ -85,49 +288,163 @@
 #keypad_H{
 	display: flex;
 	flex-direction: column;
-	height: 25vh;
-	/*background-color: blue;*/
+	height: 29.5vh;
+	margin-top: 5vh;
 }
 
 #keypad_H div{
 	width: calc(100% - 20px);
 	display: flex;
 	flex-direction: row;
-	/*background-color: #333;*/
 	height: 33%;
 	margin:auto;
+	margin-top: 1vh
 }
 #keypad_H div button{
 	border: 0px;
 	opacity: .9;
 	width: 10%;
-	height: 90%;
+	height: 100%;
 	margin: auto;
 	font-size: 5vmin;
 	font-family: 'Archivo Black', sans-serif;
+	border: 6px outset;
+	border-color:rgba(163, 85, 85, 0); /*this is set to the "picked" color to work!*/
+	transition: background .1s ease-in-out;
+	border-radius: 5px;
+	cursor:pointer;
 }
-#keypad_H div button:not(#key-picked) {
-	background-color: #ccc;
+#keypad_H div button:not(#key-picked_FAIL):not(#key-picked_PASS) {
+	background-color:  rgba(134, 202, 115, 0.5);
+	border-color: rgba(95, 163, 85, 0.5);
+	color: rgba(0, 0, 0, 0.9);
+	text-shadow: -2px 2px 2px rgba(255,255,255,0.8), 2px 2px 2px rgba(134, 202, 115, 1),
+    -2px -2px 2px rgba(134, 202, 115, 1), 2px -2px 2px rgba(134, 202, 115, 1);
 }
-#keypad_H div button:active:not(#key-picked) {
-	color:#fff;
+#keypad_H div button:active:not(#key-picked_FAIL):not(#key-picked_PASS) {
+	color: #fff;
+	text-shadow: -1px 1px 2px #000, 1px 1px 2px #000;
 }
 
-#key-picked{
-	background-color: red;
-	color:#333;
+#key-picked_FAIL{
+	background-color: rgba(202, 85, 85, 0.7);
+	color: #000;
+	text-shadow: -2px 2px 2px rgba(255,0,0,0.5), 2px 2px 2px rgba(255,0,0,0.5),
+    -2px -2px 2px rgba(255,0,0,0.5), 2px -2px 2px rgba(255,0,0,0.5);
 }
-#key-picked:active{
-	color:#950018;
+#key-picked_FAIL:active{
+	color:red;
+    text-shadow: -2px 2px 2px #000, 2px 2px 2px #000,
+    -2px -2px 2px #000, 2px -2px 2px #000;
 }
+
+#key-picked_PASS{
+	background-color: white;
+	color: green;
+}
+
+
+
 
 
 #gameBG{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: -1;
+    background-image: url("../images/bg.jpg");
+	background-size:     auto 100% ;
+    background-repeat:   repeat-x;
+    background-position: 20% center;
+}
+
+
+
+
+#startButton_H{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	height: 32vh;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.2+25,0.65+100 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 25%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 25%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 25%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+#startButton_H button{
+	margin-top: 2vh;
+	height: 80%;
+	border-radius: 25%;
+	border:1vh solid rgba(0,0,0,0.5);
+	background-color: green;
+	color: white;
+	font-family: 'Archivo Black', sans-serif;
+	padding: 0 4vh;
+	letter-spacing: 1vmin;
+	cursor: pointer;
+	text-shadow: -2px 2px 10px #000, 2px 2px 10px #000,
+   		-2px -2px 10px #000, 2px -2px 10px #000;
+    box-shadow: 0 10px 20px #000, 0 -5px 50px rgba(0,0,0,0.9),
+    	inset 0 5px 50px #000, inset 0 -5px 50px #000;
+    transition: all .2s ease-out;
+}
+
+#startButton_H button:before{
+	content: "START";
+	font-size: 12vmin;
+}
+
+#startButton_H button:hover{
+	color:rgba(255,255,255,0.8);
+}
+
+#startButton_H button:active{
+	font-size: 13vmin;
+	text-shadow: -2px 2px 10px #fff, 2px 2px 10px #fff,
+   		-2px -2px 10px #fff, 2px -2px 10px #fff;
+}
+.startB_H_hide{
 	display: none;
-	background-color: blue;
-	width: 90px;
-	height: 50%;
-	margin: 0 auto;
-	font-family: sans-serif;
-    font-size: 10vw;
+}
+.startB_H_fade{
+	transition: opacity .3s ease-out;
+	opacity: 0;
+}
+
+.startB_fade{
+	cursor: default !important;
+	transition: opacity 2s ease-out;
+	opacity: 0;
+}
+
+.shake {
+  -webkit-animation: shake_anim 0.5s;
+  animation: shake_anim 0.5s;
+  }
+
+@keyframes shake_anim {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

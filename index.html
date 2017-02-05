@@ -4,45 +4,73 @@
 	<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="./assets/javascript/game.js"></script>
+
 	<title>WIZARD HANGMAN</title>
 </head>
 <body>
 	<div id="gameContainer">
 		<div id="UI_top">
 			<div id="health_UI_H">
-				<img src=""> <p id="health">H</p>
+				<div></div>
+				<p id="health"></p>
 			</div>
 			<div id="score_UI_H">	
-				<img src=""> <p id="score">S</p>
+				<div></div>
+				<p id="score">0</p>
 			</div>
 		</div>
 
 		<div id="Scroll_H">
-			<div id="Scroll_top"></div>
-			<div id="Scroll_content">
-				_ _ _ _ _ _ _ _ _ _ _ _ _
+			<div id="Scroll_top">
+				<div></div>
+				<div>
+					<p id="infoText">
+					<!-- Hit Any Key To Continue -->
+					</p>
+				</div>
+				<div></div>
 			</div>
-			<div id="Scroll_bottom"></div>
+			<div id="Scroll_content">
+				<div></div>
+				<div>
+					<p id="spellText">
+						<!-- Brian's Hangman! -->
+						<!-- _ _ _ _ _ _ _ _ _ _ _ _ -->
+					</p>
+				</div>
+				<div></div>
+			</div>
+			<div id="Scroll_bottom">
+				<div></div>
+				<div>
+					<p id="alertText"></p>
+				</div>
+				<div></div>
+			</div>
 		</div>
 
 		<div id="mainContent_H">
 			<div id="hero_H">
-
-				<div id="hero">H</div>
+				<div id="hero"></div>
 			</div>
 
-			<div id="enemy_H">
-				<div id="enemy">E</div>
+			<div id="enemy_H" class="hideEnemy">
+				<div id="enemy"></div>
+				<div id="enemyHearts">
+					<div></div>
+				</div>
 			</div>
 		</div>
 
 		<div id="keypad_H">
-			<div class="row">
+			<div class="row" id="r1">
 				<button>A</button>
 				<button>B</button>
 				<button>C</button>
-				<button id="key-picked">D</button>
+				<button>D</button>
 				<button>E</button>
 				<button>F</button>
 				<button>G</button>
@@ -50,7 +78,7 @@
 				<button>I</button>
 			</div>
 			
-			<div class="row">
+			<div class="row" id="r2">
 				<button>J</button>
 				<button>K</button>
 				<button>L</button>
@@ -62,7 +90,7 @@
 				<button>R</button>
 			</div>
 
-			<div class="row">
+			<div class="row" id="r3">
 				<button>S</button>
 				<button>T</button>
 				<button>U</button>
@@ -73,11 +101,13 @@
 				<button>Z</button>
 				<button>3</button>
 			</div>
-
-
 		</div>
 
-		<div id="gameBG">bg</div>
+		<div id="startButton_H">
+			<button></button>
+		</div>
+
+		<div id="gameBG"></div>
 	</div>
 </body>
 </html>
