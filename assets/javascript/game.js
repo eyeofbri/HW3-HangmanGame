@@ -288,6 +288,7 @@ $(document).ready (function(){
 
     	if(which === "howTo"){
     		if(canShowHowTo){
+    			canShowHowTo = false;
 	    		$( "#howTo" ).removeClass('howTo_hide').addClass('howTo_show');
 
 				setTimeout(function(){		
