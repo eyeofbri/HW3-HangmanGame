@@ -1,70 +1,211 @@
+body{
+	background-color: #6fc15c;
+}
+
 #gameContainer{
-	width: 100vw;
+	background-image: url("../images/concrete_seamless.png");
+	font-family: sans-serif;
 	height: 100vh;
 	margin: 0 auto;
-	font-family: sans-serif;
-	background-image: url("../images/concrete_seamless.png");
 	overflow: hidden;
+	width: 100vw;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+#gameBG{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: -1;
+    background-image: url("../images/bg.jpg");
+	background-size:     auto 100% ;
+    background-repeat:   repeat-x;
+    background-position: 0% center;
+    transition: background-position 1s ease-out;
+}
+
+/*/////////////////////////////////////////////*/
+/*HOW TO POPUP*/
+/*/////////////////////////////////////////////*/
+
+.howTo_hide{
+	display: none;
+}
+
+.howTo_show{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left:0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 1000;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+#howTo button{
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  font-size: 4vmin;
+  border-radius: 20%;
+  box-shadow: 0px 5px 20px #000;
+  border: 1vmin solid #333;
+  cursor:pointer;
+}
+
+#howTo button strong{
+	font-family: 'Archivo Black', sans-serif;
+}
+
+#howTo button:after{
+	font-family: 'Archivo Black', sans-serif;
+	margin-top: 4px;
+	content: "OK?";
+	background-color: #333;
+	border-radius: 20px;
+	color: #fff;
+	display: inline-block;
+	border: 2px solid #333;
+	padding: 0 5px;
+}
+
+#howTo button:hover:after{
+	background: #ccc;
+	border: 2px solid #333;
+	color: #333;
+}
+
+#howTo button:active{
+	background: #333;
+	color: #fff;
+}
+
+
+/*/////////////////////////////////////////////*/
+/*MISC ANIMATIONS*/
+/*/////////////////////////////////////////////*/
+
+.shake {
+  -webkit-animation: shake_anim 0.5s;
+  animation: shake_anim 0.5s;
+}
+
+@keyframes shake_anim {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.spin {
+  -webkit-animation: spin_anim 1s normal forwards;
+  animation: spin_anim 1s normal forwards;
+}
+
+@keyframes spin_anim {
+  100% {
+    opacity: 0;
+    transform: rotate(1000deg);
+  }
 }
 
 
 
 
+
+
+
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+/*FURTHER PARTS OF THE SITE BROKEN DOWN INTO 4 SECTIONS*/
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+/*/////////////////////////////////////////////*/
+
+
+
+
+
+
+
+/*/////////////////////////////////////////////*/
+/*SECTION ONE, 
+
+THE HEALTH (HEARTS) & SCORE (STARS)*/
+/*/////////////////////////////////////////////*/
 
 #UI_top{
 	display: flex;
-	height: 10vh;
 	font-family: 'Archivo Black', sans-serif;
+	height: 10vh;
 	letter-spacing: 4px;
+	cursor: default;
 }
+
 #health_UI_H, #score_UI_H{
-	display: flex;
-	width: calc(50% - 20px);
-	margin: auto;
-	height: 60%;
 	background-color: rgba(255,255,255,0.5);
-	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
-	border:1px solid #000;
 	border-radius: 5px;
-}
-#health_UI_H p, #score_UI_H p {
-	width: calc(50% - 20px);
+	border:1px solid #000;
+	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+	display: flex;
+	height: 60%;
 	margin: auto;
+	width: calc(50% - 20px);
+}
+
+#health_UI_H p, #score_UI_H p {
 	font-size: 5vmin;
+	margin: auto;
+	width: calc(50% - 20px);
     color: #fff;
-    text-shadow: -2px 2px 2px #000, 2px 2px 2px #000,
-    -2px -2px 2px #000, 2px -2px 2px #000;
+    text-shadow: -2px 2px 2px #000, 2px 2px 2px #000, -2px -2px 2px #000, 2px -2px 2px #000;
 }
 
 #health_UI_H div, #score_UI_H div{
+	background-size: contain;
+	height: 80%;
 	margin: auto;
 	width: calc(50% - 20px);
-	height: 80%;
-	background-size:     contain;
-    background-repeat:   no-repeat;
     background-position: center right;
-}
-#health_UI_H div{
-	background-image: url("../images/iconHeart.png");
+    background-repeat: no-repeat;
 }
 
-#score_UI_H div{
-	background-image: url("../images/iconStar.png");
-}
+#health_UI_H div{ background-image: url("../images/iconHeart.png"); }
+
+#score_UI_H div{ background-image: url("../images/iconStar.png");}
 
 
 .upArrow:after{
-	opacity: 0;
 	content:  "\2191";
-	-webkit-animation: fadeArrow_anim 3s normal forwards;
+	opacity: 0;
   	animation: fadeArrow_anim 3s normal forwards;
+  	-webkit-animation: fadeArrow_anim 3s normal forwards;
 }
 
 .downArrow:after{
-	opacity: 0;
 	content:  "\2193";
-	-webkit-animation: fadeArrow_anim 3s normal forwards;
+	opacity: 0;
   	animation: fadeArrow_anim 3s normal forwards;
+  	-webkit-animation: fadeArrow_anim 3s normal forwards;
 }
 
 @keyframes fadeArrow_anim {
@@ -83,12 +224,24 @@
 
 
 
+
+
+
+
+/*/////////////////////////////////////////////*/
+/*SECTION TWO, 
+
+THE SCROLL ( THE MAIN DISPLAY for hidden words, alerts, and type hints) */
+/*/////////////////////////////////////////////*/
+
+
 #Scroll_H{
+	display: flex;
 	height: 27vh;
 	text-align: center;
 	width: 100%;
-	display: flex;
   	flex-direction: column;
+  	cursor: default;
 }
 
 #Scroll_top, #Scroll_bottom{
@@ -96,8 +249,8 @@
 	margin: auto;
 	height: calc(25% - 2px);
 	font-size: 4vw;
-	background-size:     contain;
-    background-repeat:   no-repeat;
+	background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     display: flex;
 	flex-direction: row;
@@ -182,8 +335,11 @@
 }
 
 
+
+
+
 #Scroll_content{
-	height: 100%;
+	height: 50%;
     display: flex;
 	flex-direction: row;
 	z-index: 9;
@@ -236,6 +392,17 @@
 
 
 
+
+
+
+
+/*/////////////////////////////////////////////*/
+/*SECTION THREE, 
+
+THE BATTLE FIELD! (the player and the enemy,etc)*/
+/*/////////////////////////////////////////////*/
+
+
 #mainContent_H{
 	display: flex;
 	height: 27vh;
@@ -259,6 +426,50 @@
 	-webkit-filter: drop-shadow(0px 20px 15px rgba(0,0,0,0.5));
 }
 
+#wizardAttack{
+	border-radius: 50%;
+	margin:auto;
+	box-shadow: inset 0 0 20px #000;
+}
+
+.W_attack {
+  -webkit-animation: w_attack_anim 3.5s;
+  animation: w_attack_anim 3.5s;
+  z-index: 1000 !important;
+}
+
+@keyframes w_attack_anim {
+  10%{
+  	width: 0vw;
+	height: 0vw;
+    transform: translate3d(0, 0, 0);
+    background-color: blue;
+  }
+
+  15%{
+  	width: 10vw;
+	height: 10vw;
+    transform: translate3d(0, 0, 0);
+  }
+
+  20%{
+  	width: 10vw;
+	height: 10vw;
+  	background-color: red;
+  }
+  
+  30% {
+  	width: 0vw;
+	height: 0vw;
+    transform: translate3d(200vw, 0, 0);
+  }
+}
+
+
+
+
+
+
 #enemy_H{
 	display: flex;
   	flex-direction: column;
@@ -281,10 +492,9 @@
     background-repeat:   no-repeat;
     background-position: center; /*right center; to animate!...maybe@@*/
 	display: table-cell;
-	-webkit-filter: drop-shadow(0px 20px 15px rgba(0,0,0,0.5));
+	-webkit-filter: drop-shadow(0px 12px 15px rgba(0,0,0,0.5));
+
 }
-
-
 
 #enemyHearts{
 	width: 50%;
@@ -308,14 +518,63 @@
 }
 
 
+#enemyAttack{
+	border-radius: 50%;
+	margin:auto;
+	box-shadow: inset 0 0 20px #000;
+}
+
+.E_attack {
+  -webkit-animation: e_attack_anim 3.5s;
+  animation: e_attack_anim 3.5s;
+  z-index: 1000 !important;
+}
+
+@keyframes e_attack_anim {
+  10%{
+  	width: 0vw;
+	height: 0vw;
+    transform: translate3d(0, 0, 0);
+    background-color: blue;
+  }
+
+  15%{
+  	width: 20vw;
+	height: 20vw;
+    transform: translate3d(0, 0, 0);
+  }
+
+  25%{
+  	width: 10vw;
+	height: 10vw;
+  	background-color: red;
+  }
+  
+  30% {
+  	width: 0vw;
+	height: 0vw;
+    transform: translate3d(-200vw, 0, 0);
+  }
+}
 
 
+
+
+
+
+
+/*/////////////////////////////////////////////*/
+/*SECTION FOUR, 
+
+THE LETTER DISPLAY*/
+/*/////////////////////////////////////////////*/
 
 #keypad_H{
 	display: flex;
 	flex-direction: column;
-	height: 29.5vh;
+	height: 29vh;
 	margin-top: 5vh;
+	overflow: hidden;
 }
 
 #keypad_H div{
@@ -381,80 +640,14 @@
 }
 
 
-#gameBG{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	left:0px;
-	right: 0px;
-	bottom: 0px;
-	z-index: -1;
-    background-image: url("../images/bg.jpg");
-	background-size:     auto 100% ;
-    background-repeat:   repeat-x;
-    background-position: 0% center;
-    transition: background-position 1s ease-out;
-}
 
 
-.howTo_hide{
-	display: none;
-}
 
-.howTo_show{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	left:0px;
-	right: 0px;
-	bottom: 0px;
-	z-index: 1000;
-    background-color: rgba(0,0,0,0.4);
-    text-align: center;
-}
 
-#howTo button{
-  position: fixed;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255,255,255,0.8);
-  padding: 10px 20px;
-  font-size: 4vmin;
-  border-radius: 20%;
-  box-shadow: 0px 5px 20px #000;
-  border: 1vmin solid #333;
-  cursor:pointer;
-}
 
-#howTo button strong{
-	font-family: 'Archivo Black', sans-serif;
-}
 
-#howTo button:after{
-	font-family: 'Archivo Black', sans-serif;
-	margin-top: 4px;
-	content: "OK?";
-	background-color: #333;
-	border-radius: 20px;
-	color: #fff;
-	display: inline-block;
-	border: 2px solid #333;
-	padding: 0 5px;
-}
 
-#howTo button:hover:after{
-	background: #ccc;
-	border: 2px solid #333;
-	color: #333;
-}
 
-#howTo button:active{
-	background: #333;
-	color: #fff;
-}
 
 
 #startButton_H{
@@ -510,6 +703,9 @@
 }
 .startB_H_hide{
 	display: none;
+	position: absolute;
+   	top: -9999px;
+    left: -9999px;
 }
 .startB_H_fade{
 	transition: opacity .3s ease-out;
@@ -522,120 +718,3 @@
 	opacity: 0;
 }
 
-
-
-
-.shake {
-  -webkit-animation: shake_anim 0.5s;
-  animation: shake_anim 0.5s;
-  }
-
-@keyframes shake_anim {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-
-
-#wizardAttack{
-	border-radius: 50%;
-	margin:auto;
-	box-shadow: inset 0 0 20px #000;
-}
-
-.W_attack {
-  -webkit-animation: w_attack_anim 3.5s;
-  animation: w_attack_anim 3.5s;
-  z-index: 1000 !important;
-}
-
-@keyframes w_attack_anim {
-  10%{
-  	width: 0vw;
-	height: 0vw;
-    transform: translate3d(0, 0, 0);
-    background-color: blue;
-  }
-
-  15%{
-  	width: 10vw;
-	height: 10vw;
-    transform: translate3d(0, 0, 0);
-  }
-
-  20%{
-  	width: 10vw;
-	height: 10vw;
-  	background-color: red;
-  }
-  
-  30% {
-  	width: 0vw;
-	height: 0vw;
-    transform: translate3d(200vw, 0, 0);
-  }
-}
-
-#enemyAttack{
-	border-radius: 50%;
-	margin:auto;
-	box-shadow: inset 0 0 20px #000;
-}
-
-.E_attack {
-  -webkit-animation: e_attack_anim 3.5s;
-  animation: e_attack_anim 3.5s;
-  z-index: 1000 !important;
-}
-
-@keyframes e_attack_anim {
-  10%{
-  	width: 0vw;
-	height: 0vw;
-    transform: translate3d(0, 0, 0);
-    background-color: blue;
-  }
-
-  15%{
-  	width: 20vw;
-	height: 20vw;
-    transform: translate3d(0, 0, 0);
-  }
-
-  25%{
-  	width: 10vw;
-	height: 10vw;
-  	background-color: red;
-  }
-  
-  30% {
-  	width: 0vw;
-	height: 0vw;
-    transform: translate3d(-200vw, 0, 0);
-  }
-}
-
-.spin {
-  -webkit-animation: spin_anim 1s normal forwards;
-  animation: spin_anim 1s normal forwards;
-}
-
-@keyframes spin_anim {
-  100% {
-    opacity: 0;
-    transform: rotate(1000deg);
-  }
-}
